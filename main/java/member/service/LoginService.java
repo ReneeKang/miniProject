@@ -1,12 +1,12 @@
 package member.service;
 
-import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
 import com.control.CommandProcess;
 
+import member.bean.MemberDTO;
 import member.dao.MemberDAO;
 
 public class LoginService implements CommandProcess {
@@ -19,7 +19,16 @@ public class LoginService implements CommandProcess {
 
 		//db
 		MemberDAO memberDAO = new MemberDAO();
-		String name = memberDAO.loginCheck(id,pwd);
+//		String name = memberDAO.loginCheck(id,pwd);
+		
+		MemberDTO dtoNameEmail = memberDAO.loginCheckPlusEmail(id, pwd);
+		System.out.println("dtoNameEmail="+dtoNameEmail);
+		String name=dtoNameEmail.getName();
+		String userEmail = dtoNameEmail.getEmail1()+"@"+dtoNameEmail.getEmail2();
+		System.out.println("userEmail="+userEmail);
+		
+		
+		
 		String loginResult = null;
 		String failNum=null;
 		//응답
@@ -65,7 +74,7 @@ public class LoginService implements CommandProcess {
 			HttpSession session = request.getSession();//세션 생성
 			session.setAttribute("memName", name);
 			session.setAttribute("memId", id);
-			
+			session.setAttribute("memEmail", userEmail);
 			
 //			request.setAttribute("name", name);
 //			request.setAttribute("id", id);

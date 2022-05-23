@@ -6,18 +6,38 @@
 <meta charset="UTF-8">
 <title>게시물 등록</title>
 <style>
+
+.boardWrite_title{
+	margin-left:20px;
+	margin-top:60px;
+	margin-bottom:40px;
+	
+}
 .board-container{
 	border:1px solid black;
 	border-collapse: collapse;
+	width:80%;
 	
 }
-tr,th,td{
+.board-tr>th{
 	border:1px solid black;
 	cellspacing:0;
 	cellpadding:5;
+	width:20%;
+	
 
 }
-
+.board-tr>td{
+		border:1px solid black;
+	cellspacing:0;
+	cellpadding:5;
+	width:70%;
+}
+.board-tr{ 
+	border:1px solid black;
+	cellspacing:0;
+	cellpadding:5;
+}
 .alertMsg{
    
    color : red;
@@ -30,12 +50,12 @@ tr,th,td{
 </style>
 </head>
 <body>
-
+	<div class="boardWrite_title">
 	<h2>Board</h2>
-	
+	</div>
 	<form action="/miniProject/board/boardWrite.do" method="POST" name="boardWriteForm" >
 		<table class="board-container" cellpadding="5">
-			<tr>
+			<tr class="board-tr">
 				<th >제목</th>
 				<td>
 					<input name="subject" id="subject" type="text" placeholder="제목을 입력하세요">
@@ -43,14 +63,14 @@ tr,th,td{
 				</td>
 				
 			</tr>
-			<tr>
+			<tr class="board-tr">
 				<th>내용</th>
 				<td>
-					<textarea name="content" id="content" placeholder="내용을 입력하세요"  cols="50" rows="15"></textarea>
+					<textarea name="content" id="content" placeholder="내용을 입력하세요"  cols="100%" rows="20"></textarea>
 					<div class = "alertMsg" id = "contentDiv"></div>
 				</td>
 			</tr>
-			<tr>
+			<tr class="board-tr">
 				<td colspan="2" align="center">
 					<input type="button" onclick="check()" value="글쓰기"></button>
 				<!-- <button type="submit" onclick="check()">글쓰기</button> -->	

@@ -18,14 +18,10 @@ body{
 	color:red;
 	font-size: 8pt;
 }
-
-#loginForm{
-	
-	
-}
 .login-table{
-	
+	margin-top:30px;
 }
+
 .login-item{
 	display:block;
 	margin-bottom:10px;

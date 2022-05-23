@@ -1,26 +1,38 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-<!DOCTYPE html>
-<html>
-<head>
+
 <meta charset="UTF-8">
-<title>회원정보수정</title>
 <style>
-#writeForm2 div{
+#myInfoForm div{
 	color:red;
 	font-size: 8pt;
+	
 }
 
+.myInfo_title{
+	margin-left:20px;
+	margin-top:60px;
+	margin-bottom:40px;
+	
+}
+.myInfoForm{
+	width:80%;
+	margin-left:20px;
+	
+}
+.myInfoForm td{
+	height:40px;
+}
 </style>
 
-</head>
-<body>
-
+<div class="myInfo_title">
 <h3>회원정보수정</h3>
+
+</div>
 <form name="myInfoForm" id="myInfoForm" method="POST" action="/miniProject/member/update.do">
-	<table border="1" cellpadding="5" cellspacing="0">
-		<tr>
-			<td align="center" width="100">이름</td>
+	<table class="myInfoForm" border="1" cellpadding="5" cellspacing="0">
+		<tr >
+			<td align="center" width="130">이름</td>
    			<td>
     			<input type="text" name="name" id="name" value="">
     			<div id="nameDiv_update"></div>
@@ -31,8 +43,6 @@
 			<td align="center">아이디</td>
 			<td>
 				<input type="text" name="id" id="userId" readonly>
-				<%-- <a href="/miniProject/member/checkId.do?id=${requestScope.id}"> --%>
-					<!-- <input type="button" value="중복체크" onclick="checkId()"> -->
 				<div id="idDiv_update"></div>
 	   		</td>
 		</tr>
@@ -146,5 +156,21 @@ function getMyInfo(){
 
 getMyInfo();
 </script>
-</body>
-</html>
+
+<!-- 
+강사님 수업시간 코드 
+<script>
+window.onload() = function(){
+	document.updateForm.gender['${memberDTO.gender}'].checked = true;
+	document.updateForm.email2.value=
+</script>
+
+다시작성을 눌렀을 때 
+얘는 안읽어진다. 
+
+ -->
+
+
+
+
+

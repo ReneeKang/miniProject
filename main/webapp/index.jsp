@@ -5,7 +5,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Insert title here</title>
+<title>Welcome</title>
 <style type="text/css">
 body{
 	margin:0 auto;
@@ -29,8 +29,8 @@ body{
 #container{
 	/*margin:auto;  */
 	width:1500px;
-	margin-left:30px;
-	pargin-right:30px;
+	/* margin-left:30px;
+	pargin-right:30px; */ 
 	height:500px;
 /* 	background: gray; */
  
@@ -65,7 +65,7 @@ body{
 	
 }
 
-
+ 
 
 
 

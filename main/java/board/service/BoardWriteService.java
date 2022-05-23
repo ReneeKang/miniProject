@@ -5,6 +5,7 @@ import java.util.Map;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 import com.control.CommandProcess;
 
@@ -15,6 +16,14 @@ public class BoardWriteService  implements CommandProcess{
 
 	@Override
 	public String requestPro(HttpServletRequest request, HttpServletResponse response) throws Throwable {
+		
+		//데이터    하하하추가
+		HttpSession session = request.getSession();
+		
+		String id = (String)session.getAttribute("memId");
+		String name = (String)session.getAttribute("memName");
+		String email = (String)session.getAttribute("memEmail");
+		
 		
 		//넘어오는 데이터 저장
 		String subject = request.getParameter("subject");

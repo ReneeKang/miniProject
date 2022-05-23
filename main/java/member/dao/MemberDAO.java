@@ -239,6 +239,38 @@ public class MemberDAO {
 			e.printStackTrace();
 		}
 	}
+
+	public MemberDTO loginCheckPlusEmail(String id, String pwd) {
+			System.out.println("dao에옴??");
+			String sql = "select * from member where id=? and pwd=?";
+			getConnection();
+			
+			MemberDTO dto = new MemberDTO();
+			
+			try {
+				pstmt=conn.prepareStatement(sql);
+				pstmt.setString(1,id);
+				pstmt.setString(2, pwd);
+				
+				rs = pstmt.executeQuery();
+				System.out.println("rs ? ? = "+ rs);
+				if(rs.next()) {
+					
+					dto.setName(rs.getString("name"));
+					dto.setEmail1(rs.getString("email1"));
+					dto.setEmail2(rs.getString("email2"));
+					
+				}
+				System.out.println("?????????????"+dto.toString());
+				
+			}catch(SQLException e) {
+				e.printStackTrace();
+			}finally {
+				close();
+			}
+		
+		return dto;
+	}
 	
 }
 

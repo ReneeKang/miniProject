@@ -1,6 +1,8 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 
+    
 <%-- 
 <!DOCTYPE html>
 <html>
@@ -53,19 +55,34 @@ li:hover{
 
 	
 <ul class="mainnav">
-	<li><a href="/miniProject/board/boardWriteForm.do">글쓰기</a></li>
+	
+	<c:if test="${sessionScope.memId!=null }">
+	<li><a href="#" onclick="checkLogin();">글쓰기</a></li>
+	</c:if>
+	
 	<li><a href="/miniProject/board/boardList.do?pg=1">목록</a></li>
 </ul>
 
+
+<script type="text/javascript">
+function checkLogin(){
 	
+	if(${empty sessionScope.memId}){
+		console.log("로긴안함???ㅋ 글못쓴다 ㅋ");
+		alert("로그인 먼저 해라?!");
+		location.href = "/miniProject/index.jsp";
+		return false;
+	}
+	else{
+		console.log("로긴했네 ? ?ㅋㅋ 글써도됌");
+		location.href = "/miniProject/board/boardWriteForm.do";
+		return true;
+	}
+}
+</script>
+
 	
-	
-	
-	
-	
-	
-	
-	
-	
+​
+
 	
 	

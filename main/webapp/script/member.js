@@ -10,21 +10,42 @@ function checkWrite(){
 	if(document.writeForm2.name.value =="")
 		document.getElementById("nameDiv").innerText = "이름을 입력하세요";
 	else if(document.writeForm2.id.value =="")
-		document.getElementById("idDiv_write").innerText = "아이디를 입력하세요";
+		document.getElementById("idDiv_write").innerText = "아이디를 입력하세요";	
 	else if(document.writeForm2.pwd.value =="")
 		document.getElementById("pwdDiv_write").innerText = "비밀번호를 입력하세요";
 	else if(document.writeForm2.pwd.value != document.writeForm2.repwd.value)
 		document.getElementById("pwdDiv_write").innerText = "비밀번호 맞지 않습니다.";
-	
+		
+	//중복체크 안했으면 하라고 ㅋ 무조건 해야 회원가입 가능 ㅋ
+	else if(document.writeForm2.doCheckId.value=="false"){
+		alert("id 중복확인 필수");
+	}
+	//가입버튼 눌렀을때
+	//현재 텍스트창에 입력된 아이디?     중복검사때 허용한 아이디 ? 
+	//같지 않으면   중복체크 한번 더 해라.  라고 알림띄워주기
+	else if(document.writeForm2.id.value!=sId){
+		alert("id 다시 중복확인해...");
+	}
 	else 
 		document.writeForm2.submit();	
+		
+		
+	
+	
 }
 
 
+var sId;
+
 //중복체크
 function checkId(){
+	//회원가입 전 중복체크 버튼 눌렀는지 확인
+	console.log("회원가입전에 중복체크했냐구??? 했음 가입하게 해줄게")
+	document.writeForm2.doCheckId.value="true";
+	
+	
 	//alert("sldfd");
-	var sId= document.writeForm2.id.value;
+	sId= document.writeForm2.id.value;
 	
 	document.getElementById("idDiv_write").innerText = "";
 	if(sId==""){

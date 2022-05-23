@@ -43,7 +43,7 @@ td{
 </style>
 </head>
 <body>
-	<h2>게시글 목록</h2> 
+	<h2>게시글 목록2</h2> 
 	
 	<% System.out.println("boardList페이지"); %>
 	<%--EL로확인 = ${list}  --%>
@@ -51,7 +51,7 @@ td{
 	
 	
 	 <div class="board-container">	
-	<table>
+	<table class="table-list">
 		<tr>
 			<th>글번호</th>
 			<th>작성자</th>

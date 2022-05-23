@@ -1,23 +1,35 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-<!DOCTYPE html>
-<html>
-<head>
+
 <meta charset="UTF-8">
 <title>회원가입(Renee)</title>
 <style>
 #writeForm2 div{
 	color:red;
 	font-size: 8pt;
+	width:80%;
+}
+.writeForm_title{
+	margin-left:20px;
+	margin-top:60px;
+	margin-bottom:40px;
+}
+.writeForm2{
+	width:80%;
+	margin-left:20px;
 }
 
+.writeForm2 td{
+	height:40px;
+}
 </style>
-</head>
-<body>
 
+<div class="writeForm_title">
 <h3>회원가입</h3>
+
+</div>
 <form name="writeForm2" id="writeForm2" method="POST" action="/miniProject/member/write.do">
-	<table border="1" cellpadding="5" cellspacing="0">
+	<table class="writeForm2" border="1" cellpadding="5" cellspacing="0">
 		<tr>
 			<td align="center" width="100">이름</td>
    			<td>
@@ -31,7 +43,8 @@
 			<td>
 				<input type="text" name="id" id="userId" placeholder="아이디 입력">
 				<%-- <a href="/miniProject/member/checkId.do?id=${requestScope.id}"> --%>
-					<input type="button" value="중복체크" onclick="checkId()">
+					<input type="button" value="중복체크" id="notCheck" onclick="checkId()">
+					<input type="text" name="doCheckId" value="false" hidden>
 				<div id="idDiv_write"></div>
 	   		</td>
 		</tr>
@@ -116,7 +129,5 @@ function alert(){
 	
 	
 }--%>
-
 </script>
-</body>
-</html>
+
