@@ -47,8 +47,10 @@ btn1, btn2{
 		</tr>
 		<tr>
 			<td colspan="3">
-				<div class="boardViewBox" >
-					<pre >${boardDTO.content }</pre>  <%--내가 입력한 그대로 화면에 뿌려라 --%>
+				<div class="boardViewBox" style="border:1px red solid; width:100%; height:100%; overflow:auto;">
+					<pre style="white-space:pre-line;word-break; break-all;">
+						${boardDTO.content }
+					</pre>  <%--내가 입력한 그대로 화면에 뿌려라 --%>
 				</div>
 			</td>
 		</tr>

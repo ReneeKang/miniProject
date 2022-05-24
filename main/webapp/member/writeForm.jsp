@@ -45,6 +45,8 @@
 				<%-- <a href="/miniProject/member/checkId.do?id=${requestScope.id}"> --%>
 					<input type="button" value="중복체크" id="notCheck" onclick="checkId()">
 					<input type="text" name="doCheckId" value="false" hidden>
+					<%-- hidden박스의 value에다가  아이디를 여기에 저장해놔도 된다.
+					checkOk.jsp에서 사용하기 눌렀을때 그 아이디값을 hidden에 담아주고  나중에 비교하기  --%>
 				<div id="idDiv_write"></div>
 	   		</td>
 		</tr>

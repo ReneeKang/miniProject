@@ -27,6 +27,13 @@ h2{
 </c:if>
 
 
+<script>
+window.onload=function(){
+	alert("작성한글 저장완료~");
+	/* location.href='/miniProject/board/boardList.do'; */
+}
+</script>
+
 
 	
 </body>

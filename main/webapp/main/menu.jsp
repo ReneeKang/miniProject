@@ -46,9 +46,14 @@
 	display:block;
 	text-decoration:none;
 }
+.mainnav li a:hover{
+	color:white;
+	background-color: #0066ff;
+}
+
 li:hover{
 	
-	background: orange;
+	background: blue;
 	
 }
 </style>

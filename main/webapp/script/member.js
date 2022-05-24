@@ -28,10 +28,6 @@ function checkWrite(){
 	}
 	else 
 		document.writeForm2.submit();	
-		
-		
-	
-	
 }
 
 

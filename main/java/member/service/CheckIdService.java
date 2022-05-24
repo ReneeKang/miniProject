@@ -25,10 +25,10 @@ public class CheckIdService implements CommandProcess {
 		request.setAttribute("userId",userId);
 		
 		if(exist) //아이디가 존재하겨있으면
-			return "/member/checkFail.jsp"; //id 사용 불가능
+			return "/member/checkIdFail.jsp"; //id 사용 불가능
 	
 		else
-			return "/member/checkOk.jsp"; // 아이디 사용 가능
+			return "/member/checkIdOk.jsp"; // 아이디 사용 가능
 		
 		
 	}
