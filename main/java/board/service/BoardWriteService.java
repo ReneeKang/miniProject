@@ -35,11 +35,12 @@ public class BoardWriteService  implements CommandProcess{
 		
 		
 		//Map map = new HashMap();
-		Map<String,String> map = new HashMap<String,String>();
+//		Map<String,String> map = new HashMap<String,String>();
 //		map.put("id", "ddochi");
 //		map.put("name", "또치");
 //		map.put("email", "hong@java.com");
 		
+		Map<String,String> map = new HashMap<String,String>();
 		map.put("id", id);
 		map.put("name", name);
 		map.put("email", email);

@@ -53,7 +53,7 @@ public class WriteService implements CommandProcess {
 	//	return "/member/write.jsp?su="+su;
 //		return "/member/write.jsp";
 		request.setAttribute("display", "/member/write.jsp");
-		return "/index.jsp";
+		return "/";
 		
 	}
 

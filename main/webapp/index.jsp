@@ -26,12 +26,13 @@ body{
 	/*background: yellow;*/
 }
 
+
 #container{
 	/*margin:auto;  */
 	width:1500px;
 	/* margin-left:30px;
 	pargin-right:30px; */ 
-	height:500px;
+	height:800px;
 /* 	background: gray; */
  
 }
@@ -65,7 +66,6 @@ body{
 	
 }
 
- 
 
 
 

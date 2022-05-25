@@ -28,7 +28,7 @@
 
 }
 .board-tr>td{
-		border:1px solid black;
+	border:1px solid black;
 	cellspacing:0;
 	cellpadding:5;
 	width:70%;
@@ -72,7 +72,7 @@
 			</tr>
 			<tr class="board-tr">
 				<td colspan="2" align="center">
-					<input type="submit" onclick="" value="글쓰기"></button>
+					<input type="button" onclick="check()" value="글쓰기">
 				<!-- <button type="submit" onclick="check()">글쓰기</button> -->	
 					<button type="reset" >다시작성</button>
 <!-- 				<input type="button" value="목록" style="margin:5px;" onclick="location.href='/mvcBoard/board/boardList.do'"> -->	

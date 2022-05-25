@@ -1,5 +1,8 @@
 package member.service;
 
+import java.util.HashMap;
+import java.util.Map;
+
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
@@ -21,8 +24,16 @@ public class LoginService implements CommandProcess {
 		MemberDAO memberDAO = new MemberDAO();
 //		String name = memberDAO.loginCheck(id,pwd);
 		
-		MemberDTO dtoNameEmail = memberDAO.loginCheckPlusEmail(id, pwd);
+		//mybatis해야되니까 Map에 담아보내자.
+//		MemberDTO dtoNameEmail = memberDAO.loginCheckPlusEmail(id, pwd);
+//		System.out.println("dtoNameEmail="+dtoNameEmail);
+		Map<String,String> map = new HashMap<>();
+		map.put("id", id);
+		map.put("pwd", pwd);
+		MemberDTO dtoNameEmail = memberDAO.loginCheckPlusEmail(map);
 		System.out.println("dtoNameEmail="+dtoNameEmail);
+		
+		
 		String name=dtoNameEmail.getName();
 		String userEmail = dtoNameEmail.getEmail1()+"@"+dtoNameEmail.getEmail2();
 		System.out.println("userEmail="+userEmail);

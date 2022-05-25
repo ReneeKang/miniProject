@@ -26,14 +26,14 @@ h2{
 	<h2>게시물 등록에 실패하였습니다.</h2>
 </c:if>
 
-
+<!-- 
 <script>
 window.onload=function(){
 	alert("작성한글 저장완료~");
 	/* location.href='/miniProject/board/boardList.do'; */
 }
 </script>
-
+ -->
 
 	
 </body>
