@@ -8,6 +8,7 @@
 <title>Welcome</title>
 <style type="text/css">
 body{
+	bacground-color:#F8F4E3;
 	margin:0 auto;
 	padding:0;
 	height:100%;
@@ -16,27 +17,30 @@ body{
 }
 
 #header{
-	width:1500px;
+	width:1300px;
  	margin-left:30px;
-	margin-right:30px; 
+	margin-right:30px;
+	margin-top:30px; 
 	/* margin:0 auto; */
 	/* width:1000px; */
 	height:10%;
 	text-align:center;  /* 이게 지금 header가 가운데로옴....*/
 	/*background: yellow;*/
+	color: #8D6346;
+	font-weight:bold;
 }
 
-
+  
 #container{
 	/*margin:auto;  */
-	width:1500px;
+	width:1300px;
 	/* margin-left:30px;
 	pargin-right:30px; */ 
 	height:800px;
 /* 	background: gray; */
  
 }
-
+ 
 #container:after{
 	content:'';
 	display:block;
@@ -60,12 +64,16 @@ body{
 	/* background: #FFFBDB; */
 } 
 
+#section h2{
+	color: #8D6346;
+	font-size:18px;
+	margin:40px 30px;
+}
 #footer{
-	width:1500px;
+	width:1300px;
 	height:10%;
 	
 }
-
 
 
 
@@ -73,8 +81,10 @@ body{
 </head>
 <body>
 	<div id="header">
-		<h1>
-			<img src="/miniProject/image/ch4.gif" onclick="location.href='/miniProject/index.jsp'" style="cursor:pointer;" width="70" height="70" alt="춘식이"></a>MVC를 이용한 미니 프로젝트
+		<h1 class="h">
+			<a><img src="/miniProject/image/ch4.gif" onclick="location.href='/miniProject/index.jsp'" style="cursor:pointer;" width="70" height="70" alt="춘식이">
+				MVC - Mini Project</a>
+					
 		</h1>
 		<br>
 		<jsp:include page="./main/menu.jsp"></jsp:include>

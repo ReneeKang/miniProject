@@ -50,20 +50,21 @@ public class BoardWriteService  implements CommandProcess{
 		
 		
 		//데이터를 모델 BoardDTO에 저장
-		BoardDTO boardDTO = new BoardDTO("id","또치","메일@gmail.com");
-		boardDTO.setSubject(subject);
-		boardDTO.setContent(content);
-		
-		System.out.println(boardDTO.toString());
+//		BoardDTO boardDTO = new BoardDTO("id","또치","메일@gmail.com");
+//		boardDTO.setSubject(subject);
+//		boardDTO.setContent(content);
+//		
+//		System.out.println(boardDTO.toString());
 		
 		
 		//DB
 		BoardDAO boardDAO = new BoardDAO();
 		//DB 응답
-		int su = boardDAO.writeOnBoard(boardDTO);
+//		int su = boardDAO.writeOnBoard(boardDTO);
 //		int su2 = boardDAO.writeOnBoard(map);
+		boardDAO.boardWrite(map);
 		
-		
+		int su=1;
 		//응답 보내기 - 데이터전송
 		request.setAttribute("su", su);
 		request.setAttribute("display" ,"/board/boardWrite.jsp");

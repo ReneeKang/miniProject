@@ -10,6 +10,7 @@
 <title>Write_jsp</title>
 </head>
 <body>
+
 <c:if test="${requestScope.su==1 }">
 회원가입을 축하합니다.
 </c:if>

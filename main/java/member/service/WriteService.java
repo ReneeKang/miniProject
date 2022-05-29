@@ -26,7 +26,8 @@ public class WriteService implements CommandProcess {
 		String zipcode = request.getParameter("zipcode");
 		String addr1 = request.getParameter("addr1");
 		String addr2 = request.getParameter("addr2");
-
+		String date = request.getParameter("logtime");
+		
 		//MemberDAO memberDAO = new MemberDAO();
 		//memberDAO.write(name,id,pwd,~~~ 12개)
 		MemberDTO memberDTO = new MemberDTO();
@@ -47,6 +48,7 @@ public class WriteService implements CommandProcess {
 		//DB
 		MemberDAO memberDAO = new MemberDAO();
 		int su = memberDAO.write(memberDTO);
+		System.out.println("su= "+ su);
 		
 		//응답
 		request.setAttribute("su", su);

@@ -6,7 +6,7 @@ import javax.servlet.http.HttpSession;
 
 import com.control.CommandProcess;
 
-public class BoardWriteFormService  implements CommandProcess{
+public class BoardWriteFormService  implements CommandProcess{ //원글
 
 	@Override
 	public String requestPro(HttpServletRequest request, HttpServletResponse response) throws Throwable {

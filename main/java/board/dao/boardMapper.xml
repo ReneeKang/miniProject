@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+ "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+ 
+ <mapper namespace="boardSQL">
+ 
+ 	<!-- 게시판 글쓰기  -->
+ 	<insert id="writeOnBoard" parameterType="board">
+ 		insert into board (seq,id,name,email,subject,content,ref,logtime)
+ 					values (seq_board.nextval, #{id}, #{name}, #{email}, #{subject}, #{content}, seq_board.currval, sysdate)
+	</insert>
+	
+	<insert id="boardWrite" parameterType="java.util.Map">
+ 		insert into board (seq,id,name,email,subject,content,ref,logtime)
+ 					values (seq_board.nextval, #{id}, #{name}, #{email}, #{subject}, #{content}, seq_board.currval, sysdate)
+	</insert>		
+ 
+ 	
+	<!-- 목록가져오기 몇페이지부터 몇페이지까지   헐 ??????????????????-->
+ 	<select id="selectBoard" parameterType="java.util.Map" resultType="board">
+ 		select * from (select rownum rn, tt.* from (select * from board order by ref desc,step asc ) tt ) 
+ 								where rn&gt; =#{startNum} and rn&lt;=#{endNum}
+ 							<!-- 	where rn between #{startNum} and #{endNum} -->
+ 	</select>
+ 
+ 	<select id="getTotalA" resultType="int">
+ 		select count(*) from board
+ 	</select>
+ 	
+ 	<select id="getBoard" parameterType="int" resultType="board">
+ 		select * from board where seq=#{seq}
+ 	</select>
+ 	
+ 	<update id="updateHit" parameterType="int">
+ 		Update board SET hit = hit+1 where seq=#{seq}
+ 	</update>
+ 	
+ 	<!-- 글수정 -->
+ 	<update id="boardUpdate" parameterType="java.util.Map">
+ 		update board set subject=#{subject}, content=#{content}, logtime=sysdate where seq=#{seq}
+ 	</update>
+ 	
+ 	<!-- 답글 -->
+ 	<update id="boardReply1" parameterType="board">
+ 		update board set step=step+1 where ref=#{ref} and step > #{step}
+ 	</update>
+ 	
+ 	<insert id="boardReply2" parameterType="java.util.Map">
+ 		insert into board values (seq_board.nextval
+ 								, #{id}
+ 								, #{name}
+ 								, #{email}
+ 								, #{subject}
+ 								, #{content}
+ 								, #{ref}
+ 								, #{lev}
+ 								, #{step}
+ 								, #{pseq}
+ 								, 0 <!-- reply -->
+ 								, 0 <!-- hit -->
+ 								, sysdate )
+ 	</insert>
+ 	
+ 	<!-- <insert id="boardReply3" parameterMap="int">
+ 		update board set reply=reply+1 where seq=#{seq}
+ 	</insert> -->
+ 	
+ 	<insert id="boardReply3" parameterType="java.util.Map">
+ 		update board set reply=reply+1 where seq=#{pseq}
+ 	</insert>
+ 
+ 
+ 
+ 	<update id="replyCntDown" parameterType="java.util.Map">
+ 		<if test="pseq==0">
+ 			update board set reply=reply where seq=#{pseq}
+ 		</if>
+ 		<if test="pseq!=0">
+ 			update board set reply=reply-1 where seq=#{pseq}
+ 		</if>
+ 	</update>
+ 	
+ 	<update id="replyTitle" parameterType="java.util.Map">
+ 		update board set subject=#{reTitle} where pseq=#{seq}
+ 	</update>
+ 	
+ 	<delete id="boardDelete" parameterType="java.util.Map">
+ 		delete board where seq=#{seq}
+ 	</delete>
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ </mapper>

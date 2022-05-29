@@ -27,9 +27,9 @@ public class MemberDAO {
 	
 	//회원가입
 	public int write(MemberDTO memberDTO) {
-		int su=0;
+		
 		SqlSession sqlSession = sqlSessionFactory.openSession();
-		sqlSession.insert("memberSQL.write",memberDTO);
+		int su= sqlSession.insert("memberSQL.write",memberDTO);
 		sqlSession.commit();
 		sqlSession.close();
 		

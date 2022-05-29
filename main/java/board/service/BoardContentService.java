@@ -36,11 +36,11 @@ public class BoardContentService implements CommandProcess {
 		BoardDAO boardDAO = new BoardDAO();
 		//처음에 내용만 보여주게 만들었는데, 돌아가기 가능하게 만들거라 pg도 필요하고~~ //그냥통으로받음
 		//select해서 내용이랑 음????/
-		String content = boardDAO.getContent(seq);
+//		String content = boardDAO.getContent(seq);
 //		BoardDTO boardDTO = boardDAO.getBoard(seq);
 		
 		//응답
-		request.setAttribute("content", content); //내용
+//		request.setAttribute("content", content); //내용
 //		request.setAttribute("boardDTO", boardDTO);
 	//	request.setAttribute("pg", pg);
 		

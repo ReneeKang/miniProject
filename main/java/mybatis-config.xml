@@ -11,6 +11,7 @@
  
  	<typeAliases> <!-- dto클래스..디비... 별로... -->
  		<typeAlias type="member.bean.MemberDTO" alias="member"/>
+ 		<typeAlias type="board.bean.BoardDTO" alias="board"/>
  	</typeAliases>
  	
  	<environments default="development">
@@ -27,6 +28,7 @@
  	 
  	 <mappers><!--  아래xml파일 보고 맵핑하면 된다고 알려줌 -->
  	 	<mapper resource="member/dao/memberMapper.xml"></mapper>
+ 	 	<mapper resource="board/dao/boardMapper.xml"></mapper>
  	 		<!-- 여기에 매핑추가가능!! 보드 랑 등등 -->
  	 </mappers>
 </configuration>

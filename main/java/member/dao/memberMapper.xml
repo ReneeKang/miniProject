@@ -28,7 +28,7 @@
  	</select>
  	
  	
- 	<select id="isExistId" parameterType="String">
+ 	<select id="isExistId" parameterType="String" resultType="member">
  		select * from member where id=#{id}
  	</select>
  	
