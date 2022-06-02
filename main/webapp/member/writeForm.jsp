@@ -123,7 +123,7 @@
 </form>
 
 <script src="//t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
-<script type="text/javascript" src="/miniProject/script/member.js">    
+    
 <%--
 function alert(){
 	alert("오니?")

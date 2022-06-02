@@ -58,6 +58,22 @@ function checkId(){
 	//윈도우 창에대한 3가지 속성  1)어떤뷰뜰건지 2) 식별자 3) 크기 이렇게 지정가능하다. 
 	
 	
+//중복아이디체크
+$('#id').focusout(function(){
+	//if(id입력값이 없는 경우){
+		
+	if(id입력값이 없는 경우){
+	//	id가 idDiv_write div에 "먼저 아이디 입력" 넣으세요
+		$('#idDiv').css('color', 'magenta');
+		$('#idDiv').css('font-size', '8pt');
+		$('#idDiv').css('font-weight', 'bold');
+		
+	}
+	
+});
+
+
+
 
 
 //다음우편번호

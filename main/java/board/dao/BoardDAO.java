@@ -89,7 +89,7 @@ public class BoardDAO {
 	public BoardDTO getBoard(int seq) {
 			SqlSession sqlSession = sqlSessionFactory.openSession();
 			BoardDTO boardDTO = sqlSession.selectOne("boardSQL.getBoard",seq);
-								sqlSession.update("boardSQL.updateHit",seq);
+//								sqlSession.update("boardSQL.updateHit",seq);
 							
 								sqlSession.commit();  //??????????????????????????
 								sqlSession.close();
@@ -153,6 +153,36 @@ public class BoardDAO {
 		
 		sqlSession.commit();
 		sqlSession.close();
+	}
+
+
+
+	public void setHit(int seq) {
+		SqlSession sqlSession = sqlSessionFactory.openSession();
+		sqlSession.update("boardSQL.updateHit",seq);
+						
+		sqlSession.commit(); 
+		sqlSession.close();
+	}
+
+
+
+	public List<BoardDTO> getBoardSearch(Map<String, String> map) {//지금 4개데이터 들어와있다.
+		SqlSession sqlSession = sqlSessionFactory.openSession();
+		List<BoardDTO> list = sqlSession.selectList("boardSQL.getBoardSearch",map);
+		sqlSession.close();
+		
+		return list;
+	}
+
+
+
+	public int getTotalSearchA(Map<String, String> map) {
+		SqlSession sqlSession = sqlSessionFactory.openSession();
+		int totalA = sqlSession.selectOne("boardSQL.getTotalSearchA",map);
+		sqlSession.close();
+		
+		return totalA;
 	}
 	
 	

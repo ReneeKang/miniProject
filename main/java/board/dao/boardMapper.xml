@@ -92,8 +92,24 @@
  
  
  
+ 	<!-- 검색 -->
+ 	<select id="getBoardSearch" parameterType="java.util.Map" resultType="board">
+ 		<![CDATA[
+ 			select * from
+ 			
+ 			(select rownum rn,tt.* from
+ 			
+ 			(select * from board where ${searchOption} like '%'||#{keyword}||'%'
+ 									order by ref desc, step asc) tt
+ 			) where rn>=#{startNum} and rn<=#{endNum}
+ 		]]>
+ 		
+ 	</select>
  
- 
- 
- 
+ 	<!--  검색한 총글수 -->
+ 	<select id="getTotalSearchA" parameterType="java.util.Map" resultType="int">
+ 		select count(*) from board where ${searchOption} like '%'||#{keyword}||'%' <!-- 검색한애들 글수가 필요 -->
+ 	</select>
+ 	
+ 	
  </mapper>
